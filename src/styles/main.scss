@@ -1,6 +1,10 @@
 @use "./fragments/variables" as *;
 @use "./fragments/mixins" as *;
 
+////////////////////////////
+///////// GENERAL //////////
+////////////////////////////
+
 *,
 *::before,
 *::after {
@@ -8,6 +12,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+ul,
+li {
+  list-style: none;
+  font-family: $font-style;
+}
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -15,20 +30,469 @@ body {
   height: auto;
   background-color: $bg-color;
   color: $font-color;
-  display: grid;
-  place-content: center;
-  text-align: center;
+  font-style: $font-style;
+  // display: grid;
+  // place-content: center;
+  // text-align: center;
 }
+
+////////////////////////////
+///////// TOPBAR  //////////
+////////////////////////////
+
+.topbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 32px;
+  background-color: $primary-color;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  @include placecenter;
+  .topbarinner {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: $max-default-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2px 1rem;
+    .contactdetail,
+    .sociallinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      p {
+        margin-right: 1rem;
+        @include placecenter;
+      }
+      li a {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .topbar .topbarinner .contactdetail {
+    font-size: 14px;
+  }
+  .topbar .topbarinner .sociallinks {
+    display: none;
+  }
+}
+
+////////////////////////////
+///////// HEADER  //////////
+////////////////////////////
+
+header {
+  position: relative;
+
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  max-width: $max-default-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 1rem;
+}
+
+.navlinks ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  letter-spacing: 1px;
+  li {
+    padding: 2px 8px;
+    margin: 0 8px;
+  }
+  button {
+    padding: 10px 1.5rem;
+    margin-left: 10px;
+    border-radius: 1.5rem;
+    font-weight: 700;
+    border: none;
+
+    background-color: $primary-color;
+    box-shadow: 2px 6px 18px rgba(0, 0, 255, 0.452);
+    transition: all 200ms ease-in-out;
+    > * {
+      color: #fff;
+    }
+    &:hover {
+      background-color: $secondery-color;
+      box-shadow: 2px 10px 18px rgba(255, 255, 0, 0.438);
+    }
+  }
+}
+
+.navtogglebtn {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+
+  padding: 6px;
+
+  background-color: rgb(209, 209, 209);
+
+  z-index: 100000;
+
+  button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    display: grid;
+    place-content: center;
+  }
+}
+
+.mobilenavlinks {
+  width: 90%;
+  max-width: 600px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  transform: translateX(100%);
+  padding: 1rem;
+  padding-top: 5rem;
+  transition: all 500ms ease-in-out;
+  z-index: 10000;
+  ul,
+  li {
+    width: 100%;
+    padding: 1rem;
+    > * {
+      color: #fff;
+    }
+  }
+
+  button {
+    padding: 10px 1.5rem;
+    margin-left: 10px;
+    border-radius: 1.5rem;
+    font-weight: 700;
+    border: none;
+
+    background-color: $primary-color;
+    box-shadow: 2px 6px 18px rgba(0, 0, 255, 0.452);
+    transition: all 200ms ease-in-out;
+    > * {
+      color: #fff;
+    }
+  }
+}
+
+.activemobilenavlinks {
+  width: 90%;
+  max-width: 600px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  transform: translateX(0);
+  padding: 1rem;
+  padding-top: 5rem;
+  transition: all 400ms ease-in-out;
+  z-index: 10000;
+  ul,
+  li {
+    width: 100%;
+    padding: 1rem;
+    > * {
+      color: #fff;
+    }
+  }
+  ul li:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  button {
+    padding: 10px 1.5rem;
+    margin-top: 12px;
+    border-radius: 1.5rem;
+    font-weight: 700;
+    border: none;
+    background-color: $primary-color;
+    box-shadow: 2px 6px 18px rgba(0, 0, 255, 0.452);
+    transition: all 200ms ease-in-out;
+    > * {
+      color: #fff;
+    }
+    &:hover {
+      background-color: $secondery-color;
+      box-shadow: 2px 10px 18px rgba(255, 255, 0, 0.438);
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navlinks {
+    display: none;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .navtogglebtn,
+  .mobilenavlinks {
+    display: none;
+  }
+}
+
+////////////////////////////
+/////////   HOME  //////////
+////////////////////////////
+
 main {
-  transform: translateY(-2rem);
+  min-height: 100vh;
   h2 {
     font-size: 2.5rem;
     font-family: $font-style-heading;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
-  h4 {
-    font-family: $font-style;
-    margin-bottom: 2rem;
+}
+
+.carousel {
+  width: 100vw;
+  height: 65vh;
+  background-color: rgba(0, 0, 0, 0.253);
+  z-index: 100;
+  img {
+    width: 100vw;
+    height: 65vh;
+  }
+}
+
+.tareef {
+  width: 100vw;
+  height: auto;
+  padding: 1.5rem 0;
+  background-color: $primary-color;
+  @include placecenter;
+  .tareefinner {
+    width: 100%;
+    max-width: $max-default-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .imgdiv {
+      width: 220px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin: 10px;
+      padding: 10px 2px;
+      text-align: center;
+      img {
+        width: 220px;
+        height: 180px;
+      }
+    }
+  }
+}
+
+.featurecatdiv {
+  width: 100vw;
+  @include placecenter;
+  flex-direction: column;
+  margin-top: 2rem;
+  .featurecatdivinner {
+    width: 100%;
+    max-width: $max-default-width;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cat {
+    width: 180px;
+    height: auto;
+    text-align: center;
+    background-color: #eee;
+    margin: 1rem;
+    img {
+      width: 180px;
+      height: 170px;
+    }
+    h4 {
+      margin: 10px 0;
+    }
+  }
+}
+
+.aboutzartaj {
+  width: 100vw;
+  height: 70vh;
+  margin: 2rem 0;
+
+  background: url("https://i.pinimg.com/originals/95/8c/de/958cdedceb28779e79e2c59cc62394c4.png")
+    no-repeat;
+  background-size: 100vw 500px;
+  @include placecenter;
+
+  .text {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    transform: translateY(-2.5rem);
+    h2 {
+      margin: 1rem 0;
+    }
+  }
+}
+
+.ourcustomer {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100vw;
+  @include placecenter;
+  flex-direction: column;
+  h2 {
+    text-transform: uppercase;
+    margin: 1rem 0;
+  }
+
+  .list {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .partnerlogo {
+      margin: 1rem;
+      img {
+        width: 150px;
+        height: 120px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .tareef .tareefinner .imgdiv {
+    width: 120px;
+    height: 100px;
+    h4 {
+      font-size: 14px;
+    }
+    img {
+      width: 120px !important;
+      height: 100px !important;
+    }
+  }
+  .featurecatdiv {
+    .featurecatdivinner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .tareef .tareefinner .imgdiv {
+    width: 80px !important;
+    height: 60px !important;
+
+    img {
+      width: 80px !important;
+      height: 60px !important;
+    }
+  }
+
+  .featurecatdiv {
+    .featurecatdivinner {
+      width: 100%;
+      max-width: $max-default-width;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .cat {
+      width: 90%;
+      height: auto;
+      text-align: center;
+      background-color: #eee;
+      margin: 1rem;
+      img {
+        width: 80%;
+        height: 250px;
+      }
+      h4 {
+        margin: 1.5rem 0;
+      }
+    }
+  }
+
+  .aboutzartaj {
+    background-size: 100vw 400px;
+    .text {
+      transform: translateY(-4.5rem);
+    }
+  }
+
+  .ourcustomer .list .partnerlogo {
+    margin: 1rem 5px;
+    img {
+      width: 120px !important;
+      height: 100px !important;
+    }
+  }
+}
+
+////////////////////////////
+///////// FOOTER  //////////
+////////////////////////////
+footer {
+  width: 100vw;
+  height: auto;
+  @include placecenter;
+
+  .footercontent {
+    width: 100%;
+    max-width: $max-default-width;
+    min-height: 12rem;
+    height: auto;
+    padding: 1rem;
+    background-color: $primary-color;
   }
 }

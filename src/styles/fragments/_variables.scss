@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-$font-style: "Roboto", sans-serif;
+// $font-style: "Roboto", sans-serif;
+$font-style: "Roboto";
 $font-style-heading: "Bebas Neue";
 
+// /// DARK THEME ///
+// $primary-color: #000096;
+// $font-color: #fff;
+// $bg-color: #111111;
+
+/// LIGHT THEME ///
 $primary-color: #000096;
-$font-color: #fff;
-$bg-color: #111111;
+$secondery-color: rgb(233, 198, 0);
+
+$font-color: rgb(0, 0, 0);
+// $bg-color: aliceblue;
+$bg-color: aliceblue;
 
 $max-default-width: 1350px;

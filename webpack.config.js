@@ -2,7 +2,7 @@ const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // generates a html file in output dir with bundled js file loaded in it
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // unlike css-loader, it create css files
-const loader = require("sass-loader");
+// const loader = require("sass-loader");
 // use style loader for injecting the css file into (output)js file
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -10,6 +10,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   mode: "development",
   devtool: "source-map",
+  // devtool: "none",
   target: "web",
 
   // entry point
@@ -20,7 +21,7 @@ module.exports = {
     filename: "index.js",
     publicPath: "./",
     path: path.resolve(__dirname, "dist"),
-    clean: true,
+    // clean: true,
   },
 
   resolve: {
@@ -44,14 +45,15 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         // use: ["style-loader", "css-loader", "sass-loader"],
       },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          outputPath: "assets",
-          publicPath: "./assets",
-        },
-      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   loader: "file-loader",
+      //   // options: {
+      //   //   // outputPath: "assets",
+      //   //   // publicPath: "./assets",
+      //   //   // name: "[path][name].[ext]",
+      //   // },
+      // },
     ],
   },
 
