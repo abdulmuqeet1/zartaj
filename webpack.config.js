@@ -45,15 +45,15 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         // use: ["style-loader", "css-loader", "sass-loader"],
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   loader: "file-loader",
-      //   // options: {
-      //   //   // outputPath: "assets",
-      //   //   // publicPath: "./assets",
-      //   //   // name: "[path][name].[ext]",
-      //   // },
-      // },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: "file-loader",
+        options: {
+          outputPath: "images",
+          publicPath: "./images",
+          name: "[name].[ext]",
+        },
+      },
     ],
   },
 

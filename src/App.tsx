@@ -24,7 +24,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { featurecategories } from "./components/productlsit";
 import { beddingproducts } from "./components/productlsit";
 // hotel components
-import Bedlinen from "./components/hotel/bedlinen";
+// import Bedlinen from "./components/hotel/bedlinen";
 import Bedscarf from "./components/hotel/bedscarf";
 import Bedspreads from "./components/hotel/bedspreads";
 import Blankets from "./components/hotel/blankets";
@@ -53,6 +53,8 @@ import "../node_modules/swiper/swiper.scss";
 
 // import "swiper/swiper-bundle.min.css";
 // import "swiper/swiper.min.css"
+
+import bedsheetset from "./assets/hotel/bedsheetset.jpg";
 
 SwiperCore.use([Lazy, Autoplay, Pagination, Navigation]);
 
@@ -192,7 +194,7 @@ export const App = () => {
             <Route path="/contact">
               <Contact />
             </Route>
-            <Route exact path="/hospitality/bedlinen">
+            <Route path="/hospitality/bedlinen">
               <Bedlinen />
             </Route>
             <Route exact path="/hospitality/bedscarf">
@@ -376,7 +378,12 @@ function Hospitality() {
               </Link>
             </li>
             <li>
-              <Link to="/hospitality/bedlinen">bed linen</Link>
+              <Link to="/hospitality/bedlinen">
+                <div>
+                  <img src={bedsheetset} alt="bag" />
+                  <h3>Bed linen</h3>
+                </div>
+              </Link>
             </li>
             <li>
               <Link to="/hospitality/bedscarf">Bed Scarf</Link>
@@ -448,3 +455,32 @@ function About() {
 function Contact() {
   return <h2>Contact</h2>;
 }
+
+// hotel components
+import { bedding } from "./components/productlsit";
+
+const Bedlinen = () => {
+  return (
+    <div>
+      {bedding.map((prod, key) => {
+        if (prod.category == "bed linen") {
+          return (
+            <div key={key} className="indieprodcard">
+              <Link to={`./${prod.category}/${prod.title}`}>
+                <div>
+                  <img src={bedsheetset} alt="abc" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          );
+        } else {
+          return <></>;
+        }
+      })}
+    </div>
+  );
+};

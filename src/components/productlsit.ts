@@ -161,3 +161,84 @@ export const featurecategories = [
   { cat: "Hotel Pillows", imgurl: "./assets/categories/bedding.png" },
   { cat: "Salt Lamp", imgurl: "./assets/categories/bedding.png" },
 ];
+
+export const bedding = [
+  {
+    title: "Pillow",
+    category: "pillow",
+    desc: "white color pillow for bedroom",
+    measurement: "",
+    imgurl: "./assets/hotel/pillow.jpg",
+  },
+  {
+    title: "Pillow Case",
+    category: "pillow case",
+    desc: "pillow case for pillow",
+    measurement: "",
+    imgurl: "./assets/hotel/pillowcase.jpg",
+  },
+  {
+    title: "Silk Pillow Case",
+    category: "pillow case",
+    desc: "white silk pillow case for pillow",
+    measurement: "",
+    imgurl: "./assets/hotel/pillowcase2.jpg",
+  },
+  {
+    title: "Bath Curtains",
+    category: "bath",
+    desc: "curtains for bath",
+    measurement: "",
+    imgurl: "./assets/hotel/bathcurtains.jpg",
+  },
+  {
+    title: "White Bath Curtians",
+    category: "bath",
+    desc: "Curtains for bathroom white color",
+    measurement: "",
+    imgurl: "./assets/hotel/bathroomcurtains.jpg",
+  },
+  {
+    title: "Bath Towel",
+    category: "bath",
+    desc: "towel for bathroom use",
+    measurement: "",
+    imgurl: "./assets/hotel/bathtowel.jpg",
+  },
+  {
+    title: "White Bath Towel",
+    category: "bath",
+    desc: "towel for bathroom use",
+    measurement: "",
+    imgurl: "./assets/hotel/bathtowel2.jpg",
+  },
+  {
+    title: "Bed Base",
+    category: "furniture",
+    desc: "wooden base for bed",
+    measurement: "",
+    imgurl: "./assets/hotel/bedbase.jpg",
+  },
+  {
+    title: "Colored Bed Scarf",
+    category: "bed scarf",
+    desc: "colored scarf for bed",
+    measurement: "",
+    imgurl: "./assets/hotel/bedscarves.jpg",
+  },
+  {
+    title: "Bed Scarf",
+    category: "bed scarf",
+    desc: "scarf for bed",
+    measurement: "",
+    imgurl: "./assets/hotel/bedscarves2.jpg",
+  },
+  {
+    title: "White Bed Sheet Set",
+    category: "bed linen",
+    desc: "white color sheet set for bed",
+    measurement: "",
+    imgurl:
+      "https://github.com/NOOR-AL-HUDA/zartaj/blob/main/assets/hotel/bedsheetset.jpg?raw=true",
+  },
+];
