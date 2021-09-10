@@ -10,7 +10,6 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   mode: "development",
   devtool: "source-map",
-  // devtool: "none",
   target: "web",
 
   // entry point
@@ -19,9 +18,9 @@ module.exports = {
   // output point
   output: {
     filename: "index.js",
-    publicPath: "./",
+    // publicPath: "./",
     path: path.resolve(__dirname, "dist"),
-    // clean: true,
+    clean: true,
   },
 
   resolve: {
@@ -45,14 +44,18 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         // use: ["style-loader", "css-loader", "sass-loader"],
       },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   loader: "file-loader",
+      //   options: {
+      //     outputPath: "assets",
+      //     publicPath: "./assets",
+      //     // name: "[name].[ext]",
+      //   },
+      // },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          outputPath: "images",
-          publicPath: "./images",
-          name: "[name].[ext]",
-        },
+        type: "asset/resource",
       },
     ],
   },

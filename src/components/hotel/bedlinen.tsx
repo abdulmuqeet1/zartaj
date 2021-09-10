@@ -13,7 +13,7 @@ const Bedlinen = () => {
               <Link to={`./${prod.category}/${prod.title}`}>
                 <div>
                   <img
-                    src={require("https://github.com/NOOR-AL-HUDA/zartaj/blob/main/assets/hotel/bedsheetset.jpg?raw=true")}
+                    src={require("../../assets/hotel/bedsheetset.jpg")}
                     alt={prod.title}
                   />
                   <div className="details">

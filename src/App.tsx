@@ -176,9 +176,6 @@ export const App = () => {
         </header>
         <div>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
             <Route exact path="/hospitality">
               <Hospitality />
             </Route>
@@ -230,6 +227,9 @@ export const App = () => {
             <Route path="/hospitality/:cat/:id">
               <Productpage />
             </Route>
+            <Route path="/">
+              <Home />
+            </Route>
           </Switch>
         </div>
       </Router>
@@ -262,40 +262,37 @@ function Home() {
           onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <img src="./assets/rice_flour/Rice.jpg" alt="rice" />
+            <img src={require("./assets/slider/slider1.jpg")} alt="slider" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./assets/rice_flour/flour2.jpg" alt="flour" />
+            <img src={require("./assets/slider/slider2.jpg")} alt="slider" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./assets/pulses_spices_grains/pulses.jpg" alt="pulses" />
+            <img src={require("./assets/slider/slider3.jpg")} alt="slider" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./assets/pulses_spices_grains/cornPSIZE.jpg" alt="corn" />
+            <img src={require("./assets/slider/slider4.jpg")} alt="slider" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./assets/pulses_spices_grains/turneric.jpg" alt="corn" />
+            <img src={require("./assets/slider/slider5.jpg")} alt="slider" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src="./assets/pulses_spices_grains/cereals.jpg"
-              alt="cereals"
-            />
+            <img src={require("./assets/slider/slider6.jpg")} alt="slider" />
           </SwiperSlide>
         </Swiper>
       </div>
       <div className="tareef">
         <div className="tareefinner">
           <div className="imgdiv">
-            <img src="./assets/lightarrow.png" alt="lightningfast" />
+            <img src={require("./assets/lightarrow.png")} alt="lightningfast" />
             <h4>Lightning Response</h4>
           </div>
           <div className="imgdiv">
-            <img src="./assets/threestar.png" alt="threeStar" />
+            <img src={require("./assets/threestar.png")} alt="threeStar" />
             <h4>Excellent Service</h4>
           </div>
           <div className="imgdiv">
-            <img src="./assets/csat.png" alt="hunderedpercent" />
+            <img src={require("./assets/csat.png")} alt="hunderedpercent" />
             <h4>Customer Satisfaction</h4>
           </div>
         </div>
@@ -308,7 +305,7 @@ function Home() {
               <div key={key} className="cat">
                 <Link to="#">
                   <div>
-                    <img src={`${category.imgurl}`} alt="category" />
+                    <img src={require(`${category.imgurl}`)} alt="category" />
                     <h4>{category.cat}</h4>
                   </div>
                 </Link>
@@ -334,34 +331,47 @@ function Home() {
         <h2>Our partners</h2>
         <div className="list">
           <div className="partnerlogo">
-            <img src="./assets/partners/asterL.jpg" alt="partner" />
+            <img src={require("./assets/partners/asterL.jpg")} alt="partner" />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/hilton.jpg" alt="partner" />
+            <img src={require("./assets/partners/hilton.jpg")} alt="partner" />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/Movenpick.jpg" alt="partner" />
+            <img
+              src={require("./assets/partners/Movenpick.jpg")}
+              alt="partner"
+            />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/primeMC.jpg" alt="partner" />
+            <img src={require("./assets/partners/primeMC.jpg")} alt="partner" />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/radisson.jpg" alt="partner" />
+            <img
+              src={require("./assets/partners/radisson.jpg")}
+              alt="partner"
+            />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/skhospital.jpg" alt="partner" />
+            <img
+              src={require("./assets/partners/skhospital.jpg")}
+              alt="partner"
+            />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/sofital.jpg" alt="partner" />
+            <img src={require("./assets/partners/sofital.jpg")} alt="partner" />
           </div>
           <div className="partnerlogo">
-            <img src="./assets/partners/waldorf_astoria.jpg" alt="partner" />
+            <img
+              src={require("./assets/partners/waldorf_astoria.jpg")}
+              alt="partner"
+            />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 function Hospitality() {
   return (
     <div className="hospitality">
@@ -372,7 +382,7 @@ function Hospitality() {
             <li>
               <Link to="/hospitality/contractbedding">
                 <div>
-                  <img src="./assets/rice_flour/bag.jpg" alt="bag" />
+                  <img src={require("./assets/rice_flour/bag.jpg")} alt="bag" />
                   <h3>Contract Bedding</h3>
                 </div>
               </Link>
@@ -380,7 +390,10 @@ function Hospitality() {
             <li>
               <Link to="/hospitality/bedlinen">
                 <div>
-                  <img src={bedsheetset} alt="bag" />
+                  <img
+                    src={require("./assets/rice_flour/flour.jpg")}
+                    alt="bag"
+                  />
                   <h3>Bed linen</h3>
                 </div>
               </Link>
@@ -417,15 +430,24 @@ function Hospitality() {
             </li>
           </ul>
         </div>
-        <div className="hotelfeatureproducts">
+        {/* <div className="hotelfeatureproducts">
           <h2>Feature Products</h2>
           <ul>
             {beddingproducts.map((prod, key) => {
+              console.log(
+                prod.imgurl.toString(),
+                typeof prod.imgurl.toString()
+              );
+
               return (
                 <li key={key}>
                   <Link to={`./hospitality/${prod.category}/${prod.title}`}>
                     <div>
-                      <img src="./assets/rice_flour/rice.jpg" alt="rice" />
+                      <img
+                        src={require(prod.imgurl.toString())}
+                        alt="products"
+                      />
+
                       <div className="text">
                         <p>{prod.category}</p>
                         <h3>{prod.title}</h3>
@@ -436,7 +458,7 @@ function Hospitality() {
               );
             })}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -468,7 +490,10 @@ const Bedlinen = () => {
             <div key={key} className="indieprodcard">
               <Link to={`./${prod.category}/${prod.title}`}>
                 <div>
-                  <img src={bedsheetset} alt="abc" />
+                  <img
+                    src={require("./assets/hotel/bedsheetset.jpg").default}
+                    alt="bedsheet"
+                  />
                   <div className="details">
                     <p>{prod.category}</p>
                     <h4>{prod.title}</h4>

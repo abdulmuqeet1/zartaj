@@ -4,63 +4,63 @@ export const beddingproducts = [
     category: "pillow",
     desc: "description daadadassdsd",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/pillow.jpg",
   },
   {
     title: "blanket",
     category: "blanket",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/.jpg",
   },
   {
     title: "pool towel",
     category: "bath",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/towels.jpg",
   },
   {
     title: "bed sheet",
     category: "coverlets",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/bedspread.jpg",
   },
   {
     title: "Duvet Cover",
     category: "duvets",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/duvets.jpg",
   },
   {
     title: "Hand Towel",
     category: "bath",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/handtowel.jpg",
   },
   {
     title: "Duvet",
     category: "duvets",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/duvets.jpg",
   },
   {
     title: "Pillow Cover",
     category: "pillow case",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/pillowcase.jpg",
   },
   {
     title: "blanket",
     category: "blankets",
     desc: "description",
     measurement: "",
-    imgurl: "./hotel/bedding/towel.jpg",
+    imgurl: "./assets/hotel/blanket.jpg",
   },
 ];
 
@@ -153,13 +153,13 @@ const mainhotelcat = [
 
 export const featurecategories = [
   { cat: "Bedspreads", imgurl: "./assets/categories/bedding.png" },
-  { cat: "Blabkets", imgurl: "./assets/categories/bedding.png" },
-  { cat: "Coverlets", imgurl: "./assets/categories/bedding.png" },
-  { cat: "Duvets", imgurl: "./assets/categories/bedding.png" },
+  { cat: "Blankets", imgurl: "./assets/categories/bedding.png" },
+  { cat: "Coverlets", imgurl: "./assets/categories/dining.png" },
+  { cat: "Duvets", imgurl: "./assets/categories/restaurant-supplies.png" },
   { cat: "Hotel Bed Linen", imgurl: "./assets/categories/bedding.png" },
   { cat: "Hotel Mattress Pads", imgurl: "./assets/categories/bedding.png" },
   { cat: "Hotel Pillows", imgurl: "./assets/categories/bedding.png" },
-  { cat: "Salt Lamp", imgurl: "./assets/categories/bedding.png" },
+  { cat: "Salt Lamp", imgurl: "./assets/categories/patio-furniture.png" },
 ];
 
 export const bedding = [
@@ -238,7 +238,6 @@ export const bedding = [
     category: "bed linen",
     desc: "white color sheet set for bed",
     measurement: "",
-    imgurl:
-      "https://github.com/NOOR-AL-HUDA/zartaj/blob/main/assets/hotel/bedsheetset.jpg?raw=true",
+    imgurl: "./assets/hotel/bedscarves2.jpg",
   },
 ];
