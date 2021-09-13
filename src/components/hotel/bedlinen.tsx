@@ -1,21 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import { bedding } from "../productlsit";
+import { bedlinen } from "../productlsit";
 
 const Bedlinen = () => {
   return (
     <div>
-      {bedding.map((prod, key) => {
-        if (prod.category == "bed linen") {
+      <h2>Bed Linen Products</h2>
+      <div>
+        {bedlinen.map((prod, key) => {
           return (
             <div key={key} className="indieprodcard">
-              <Link to={`./${prod.category}/${prod.title}`}>
+              <Link to={`/hospitality/${prod.category}/${prod.title}`}>
                 <div>
-                  <img
-                    src={require("../../assets/hotel/bedsheetset.jpg")}
-                    alt={prod.title}
-                  />
+                  <p>{`../../${prod.imgurl}`}</p>
                   <div className="details">
                     <p>{prod.category}</p>
                     <h4>{prod.title}</h4>
@@ -24,12 +21,35 @@ const Bedlinen = () => {
               </Link>
             </div>
           );
-        } else {
-          return <></>;
-        }
-      })}
+        })}
+      </div>
     </div>
   );
 };
 
 export default Bedlinen;
+
+/**
+ * 
+ * 
+ * {bedlinen.map((prod, key) => {
+        return (
+          <div key={key} className="indieprodcard">
+            <Link to={`./hospitality/${prod.category}/${prod.title}`}>
+              <div>
+
+                <p>{`../../${prod.imgurl}`}</p>
+                <div className="details">
+                  <p>{prod.category}</p>
+                  <h4>{prod.title}</h4>
+                </div>
+              </div>
+            </Link>
+          </div>
+        );
+      }) 
+      }
+ * 
+ * 
+ * 
+ */

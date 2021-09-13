@@ -24,7 +24,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { featurecategories } from "./components/productlsit";
 import { beddingproducts } from "./components/productlsit";
 // hotel components
-// import Bedlinen from "./components/hotel/bedlinen";
+import Bedlinen from "./components/hotel/bedlinen";
 import Bedscarf from "./components/hotel/bedscarf";
 import Bedspreads from "./components/hotel/bedspreads";
 import Blankets from "./components/hotel/blankets";
@@ -35,6 +35,7 @@ import Mattressencasements from "./components/hotel/mattressencasements";
 import Mattresspad from "./components/hotel/mattresspad";
 import Pillows from "./components/hotel/pillows";
 import Pillowcase from "./components/hotel/pillowcase";
+import Bath from "./components/hotel/bath";
 import Productpage from "./components/productpage";
 
 // my styling
@@ -191,7 +192,7 @@ export const App = () => {
             <Route path="/contact">
               <Contact />
             </Route>
-            <Route path="/hospitality/bedlinen">
+            <Route exact path="/hospitality/bedlinen">
               <Bedlinen />
             </Route>
             <Route exact path="/hospitality/bedscarf">
@@ -223,6 +224,9 @@ export const App = () => {
             </Route>
             <Route exact path="/hospitality/pillowcase">
               <Pillowcase />
+            </Route>
+            <Route exact path="/hospitality/bath">
+              <Bath />
             </Route>
             <Route path="/hospitality/:cat/:id">
               <Productpage />
@@ -303,10 +307,11 @@ function Home() {
           {featurecategories.map((category, key) => {
             return (
               <div key={key} className="cat">
-                <Link to="#">
+                <Link to={`/hospitality/${category.catid}`}>
                   <div>
                     <img src={require(`${category.imgurl}`)} alt="category" />
                     <h4>{category.cat}</h4>
+                    {/* <p>{`/hospitality/${category.catid}`}</p> */}
                   </div>
                 </Link>
               </div>
@@ -428,6 +433,9 @@ function Hospitality() {
             <li>
               <Link to="/hospitality/pillowcase">Pillow Case</Link>
             </li>
+            <li>
+              <Link to="/hospitality/bath">Hotel Bath</Link>
+            </li>
           </ul>
         </div>
         {/* <div className="hotelfeatureproducts">
@@ -481,31 +489,31 @@ function Contact() {
 // hotel components
 import { bedding } from "./components/productlsit";
 
-const Bedlinen = () => {
-  return (
-    <div>
-      {bedding.map((prod, key) => {
-        if (prod.category == "bed linen") {
-          return (
-            <div key={key} className="indieprodcard">
-              <Link to={`./${prod.category}/${prod.title}`}>
-                <div>
-                  <img
-                    src={require("./assets/hotel/bedsheetset.jpg").default}
-                    alt="bedsheet"
-                  />
-                  <div className="details">
-                    <p>{prod.category}</p>
-                    <h4>{prod.title}</h4>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          );
-        } else {
-          return <></>;
-        }
-      })}
-    </div>
-  );
-};
+// const Bedlinen = () => {
+//   return (
+//     <div>
+//       {bedding.map((prod, key) => {
+//         if (prod.category == "bed linen") {
+//           return (
+//             <div key={key} className="indieprodcard">
+//               <Link to={`./${prod.category}/${prod.title}`}>
+//                 <div>
+//                   <img
+//                     src={require("./assets/hotel/bedsheetset.jpg").default}
+//                     alt="bedsheet"
+//                   />
+//                   <div className="details">
+//                     <p>{prod.category}</p>
+//                     <h4>{prod.title}</h4>
+//                   </div>
+//                 </div>
+//               </Link>
+//             </div>
+//           );
+//         } else {
+//           return <></>;
+//         }
+//       })}
+//     </div>
+//   );
+// };

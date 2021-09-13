@@ -13,7 +13,7 @@ module.exports = {
   target: "web",
 
   // entry point
-  entry: "./src",
+  entry: "./src/index.tsx",
 
   // output point
   output: {
@@ -32,7 +32,7 @@ module.exports = {
       {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader", // use ts-loader with babel loader if .babelrc file doesnt contains @babel/preset-typescript
+        loader: "babel-loader", // use ts-loader along with babel loader if .babelrc file doesnt contains @babel/preset-typescript
       },
       {
         test: /\.html$/,
@@ -44,21 +44,15 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         // use: ["style-loader", "css-loader", "sass-loader"],
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   loader: "file-loader",
-      //   options: {
-      //     outputPath: "assets",
-      //     publicPath: "./assets",
-      //     // name: "[name].[ext]",
-      //   },
-      // },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: "asset/resource",
       },
     ],
   },
+  // devServer: {
+  //   historyApiFallback: true,
+  // },
 
   optimization: {
     minimize: true,
