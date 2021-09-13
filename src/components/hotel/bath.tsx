@@ -7,7 +7,7 @@ const Bath = () => {
   return (
     <div>
       <h2>Bath Products</h2>
-      {bedding.map((prod, key) => {
+      {/* {bedding.map((prod, key) => {
         if (prod.category == "bed linen") {
           return (
             <div key={key} className="indieprodcard">
@@ -28,7 +28,7 @@ const Bath = () => {
         } else {
           return <></>;
         }
-      })}
+      })} */}
     </div>
   );
 };

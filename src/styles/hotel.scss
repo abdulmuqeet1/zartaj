@@ -83,9 +83,165 @@
 }
 
 ////////////////////////////
-///////// HEADER  //////////
+////// HOTEL COMPONENTS ////
 ////////////////////////////
 
+.subcatprodspage {
+  width: 100vw;
+  height: auto;
+  margin: 1rem 0;
+  padding: 1rem;
+  padding-bottom: 5rem;
+  @include placecenter;
+  flex-direction: column;
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+  }
+  ul {
+    width: 100%;
+    max-width: $max-default-width;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      width: 18rem;
+      height: 25rem;
+      margin: 1rem;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.418);
+      img {
+        width: 18rem;
+        height: 18rem;
+      }
+      .details {
+        width: 100%;
+        height: fit-content;
+        padding: 1rem;
+        margin: 1rem 0 0 1rem;
+        p {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .subcatprodspage {
+    padding-left: 0;
+    ul {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
 ////////////////////////////
-/////////   HOME  //////////
+/////// PRODUCT PAGE ///////
 ////////////////////////////
+
+.productspage {
+  width: 100vw;
+  height: auto;
+  padding: 1rem;
+  @include placecenter;
+
+  section {
+    width: 100%;
+    max-width: $max-default-width;
+    height: auto;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      width: 100%;
+      max-width: 50rem;
+      height: 40rem;
+    }
+    .details {
+      width: 100%;
+      max-width: 20rem;
+      height: 35rem;
+      margin: 1rem;
+      margin-left: 2rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      h2 {
+        font-size: 1.4rem;
+      }
+      .cat {
+        opacity: 0.6;
+        margin-bottom: 5px;
+      }
+    }
+    button {
+      width: 12rem;
+      height: 3rem;
+      padding: 10px 1.5rem;
+      margin-top: 1.5rem;
+      border-radius: 1.5rem;
+      font-weight: 700;
+      border: none;
+
+      background-color: $primary-color;
+      box-shadow: 2px 6px 18px rgba(0, 0, 255, 0.452);
+      transition: all 200ms ease-in-out;
+      > * {
+        color: #fff;
+      }
+      &:hover {
+        background-color: $secondery-color;
+        box-shadow: 2px 10px 18px rgba(255, 255, 0, 0.438);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  section {
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100%;
+      height: 30rem;
+    }
+    .details {
+      width: 100%;
+      height: 15rem !important;
+      margin: 1rem 0 !important;
+      margin-left: 0 !important;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100%;
+      height: 20rem !important;
+    }
+    .details {
+      width: 100%;
+      height: 10rem !important;
+      margin: 0 !important;
+      margin-top: 1rem !important;
+      justify-content: space-around;
+    }
+  }
+}

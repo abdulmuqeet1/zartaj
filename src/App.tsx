@@ -24,19 +24,19 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { featurecategories } from "./components/productlsit";
 import { beddingproducts } from "./components/productlsit";
 // hotel components
-import Bedlinen from "./components/hotel/bedlinen";
-import Bedscarf from "./components/hotel/bedscarf";
-import Bedspreads from "./components/hotel/bedspreads";
-import Blankets from "./components/hotel/blankets";
-import Contractbedding from "./components/hotel/contractbedding";
-import Coverlets from "./components/hotel/coverlets";
-import Duvets from "./components/hotel/duvets";
-import Mattressencasements from "./components/hotel/mattressencasements";
-import Mattresspad from "./components/hotel/mattresspad";
-import Pillows from "./components/hotel/pillows";
-import Pillowcase from "./components/hotel/pillowcase";
-import Bath from "./components/hotel/bath";
-import Productpage from "./components/productpage";
+// import Bedlinen from "./components/hotel/bedlinen";
+// import Bedscarf from "./components/hotel/bedscarf";
+// import Bedspreads from "./components/hotel/bedspreads";
+// import Blankets from "./components/hotel/blankets";
+// import Contractbedding from "./components/hotel/contractbedding";
+// import Coverlets from "./components/hotel/coverlets";
+// import Duvets from "./components/hotel/duvets";
+// import Mattressencasements from "./components/hotel/mattressencasements";
+// import Mattresspad from "./components/hotel/mattresspad";
+// import Pillows from "./components/hotel/pillows";
+// import Pillowcase from "./components/hotel/pillowcase";
+// import Bath from "./components/hotel/bath";
+// import Productpage from "./components/productpage";
 
 // my styling
 import styled from "styled-components";
@@ -228,7 +228,7 @@ export const App = () => {
             <Route exact path="/hospitality/bath">
               <Bath />
             </Route>
-            <Route path="/hospitality/:cat/:id">
+            <Route path="/hospitality/:catid/:prodid">
               <Productpage />
             </Route>
             <Route path="/">
@@ -311,7 +311,6 @@ function Home() {
                   <div>
                     <img src={require(`${category.imgurl}`)} alt="category" />
                     <h4>{category.cat}</h4>
-                    {/* <p>{`/hospitality/${category.catid}`}</p> */}
                   </div>
                 </Link>
               </div>
@@ -486,34 +485,369 @@ function Contact() {
   return <h2>Contact</h2>;
 }
 
-// hotel components
-import { bedding } from "./components/productlsit";
+///////////////////////////////////////////
+////// hotel components products list /////
+///////////////////////////////////////////
 
-// const Bedlinen = () => {
-//   return (
-//     <div>
-//       {bedding.map((prod, key) => {
-//         if (prod.category == "bed linen") {
-//           return (
-//             <div key={key} className="indieprodcard">
-//               <Link to={`./${prod.category}/${prod.title}`}>
-//                 <div>
-//                   <img
-//                     src={require("./assets/hotel/bedsheetset.jpg").default}
-//                     alt="bedsheet"
-//                   />
-//                   <div className="details">
-//                     <p>{prod.category}</p>
-//                     <h4>{prod.title}</h4>
-//                   </div>
-//                 </div>
-//               </Link>
-//             </div>
-//           );
-//         } else {
-//           return <></>;
-//         }
-//       })}
-//     </div>
-//   );
-// };
+import {
+  bedlinen,
+  bath,
+  contractbedding,
+  bedscarf,
+  bedspread,
+  blankets,
+  coverlets,
+  duvets,
+  mattresspad,
+  mattressencasements,
+  pillows,
+  pillowcase,
+} from "./components/productlsit";
+
+const Contractbedding = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {bedlinen.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const Bedlinen = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {bedlinen.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Bedscarf = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {bedscarf.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Bedspreads = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {bedspread.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Blankets = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {blankets.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Coverlets = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {coverlets.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Duvets = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {duvets.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Mattressencasements = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {mattressencasements.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Mattresspad = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {mattresspad.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Pillows = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {pillows.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const Pillowcase = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {pillowcase.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const Bath = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {bath.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+////  ALL PAGE COMPOENTS /////
+
+import { allproducts } from "./components/productlsit";
+import { useParams } from "react-router-dom";
+
+const Productpage = () => {
+  let { catid, prodid }: any = useParams();
+  const product = allproducts.find((product) => product.prodid == prodid);
+
+  return (
+    <div className="productspage">
+      <section>
+        <img src={require(`${product?.imgurl}`)} alt="product" />
+        <div className="details">
+          <div>
+            <p className="cat">{product?.category}</p>
+            <h2>{product?.title}</h2>
+            <p>{product?.measurement}</p>
+            <br />
+            <p>{product?.desc}</p>
+          </div>
+          <button>
+            <Link to="/contact">ENQUIRY</Link>
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Productpage;
