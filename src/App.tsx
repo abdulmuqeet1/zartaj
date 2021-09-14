@@ -632,14 +632,15 @@ function Contact() {
             <h2>Zartaj General Trader LLC.</h2>
             <div className="detail">
               <address>
-                <IoLocationSharp />{" "}
+                <IoLocationSharp /> Grand Mall, Shaikh Khalifa Street, POBOX
+                45340, Ajman, UAE
               </address>
               <h4>Phone</h4>
               <p>
-                <GiPhone /> +971-67445406{" "}
+                <GiPhone /> +971-67445406
               </p>
               <p>
-                <GiPhone /> +971-501240541{" "}
+                <GiPhone /> +971-501240541
               </p>
 
               <h4>Email</h4>
@@ -647,13 +648,13 @@ function Contact() {
                 <IoMdMail />
                 <a href="mailto:info@zartajtrading.com">
                   info@zartajtrading.com
-                </a>{" "}
+                </a>
               </p>
               <p>
                 <IoMdMail />
                 <a href="mailto:mubashar@zartajtrading.com">
                   mubashar@zartajtrading.com
-                </a>{" "}
+                </a>
               </p>
             </div>
           </div>
@@ -663,6 +664,19 @@ function Contact() {
               loading="lazy"
             ></iframe>
           </div>
+        </div>
+        <div className="contactform">
+          <h2>Form</h2>
+          <form action="">
+            <input type="text" name="name" placeholder="Full Name" id="name" />
+            <input type="text" name="phone" placeholder="Phone" id="phone" />
+            <br />
+            <input type="email" name="email" placeholder="Email" id="email" />
+            <br />
+            <textarea name="message" placeholder="Message" id="message" />
+            <br />
+            <input type="submit" id="submitbtn" />
+          </form>
         </div>
       </div>
       <h1></h1>

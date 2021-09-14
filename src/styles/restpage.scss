@@ -47,3 +47,126 @@
   background: rgba(0, 0, 0, 0.767);
   text-align: center;
 }
+
+/////////// contac page ///////////
+.contactpage {
+  width: 100vw;
+
+  @include placecenter;
+
+  .contactpageinner {
+    width: 100%;
+    max-width: $max-default-width;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    .contactinfo {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 2rem;
+      > * div {
+        width: 100%;
+        max-width: 500px;
+      }
+      .textdetail {
+        > * {
+          margin: 10px 0;
+        }
+        h2 {
+          margin-bottom: 2rem;
+        }
+        h4 {
+          margin-top: 1rem;
+        }
+        p a {
+          padding: 0 10px;
+          margin-bottom: 10px;
+        }
+      }
+      .map {
+        iframe {
+          width: 35rem;
+          height: 20rem;
+        }
+      }
+    }
+  }
+}
+
+.contactform {
+  margin-top: 4rem;
+  width: 100%;
+  @include placecenter;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  form {
+    width: fit-content;
+    font-size: 1rem;
+  }
+
+  #name {
+    width: 20rem;
+    height: 2.5rem;
+    padding: 1px 10px;
+    margin: 1rem;
+  }
+  #phone {
+    width: 20rem;
+    height: 2.5rem;
+    padding: 1px 10px;
+    margin: 1rem;
+  }
+  #email {
+    width: 42rem;
+    height: 2.5rem;
+    padding: 1px 10px;
+    margin: 1rem;
+  }
+  textarea {
+    width: 42rem;
+    height: 8rem;
+    padding: 1px 10px;
+    margin: 1rem;
+  }
+  #submitbtn {
+    width: 10rem;
+    height: 2.5rem;
+    font-weight: 700;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 2rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contactpageinner .contactinfo .map iframe {
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  iframe {
+    width: 20rem !important;
+    margin-top: 1rem;
+  }
+  .contactform {
+    width: 100%;
+    #name,
+    #phone,
+    #email,
+    #message {
+      width: 20rem;
+    }
+  }
+}
