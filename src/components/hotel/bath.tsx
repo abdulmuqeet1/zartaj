@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { bedding } from "../productlsit";
-
 const Bath = () => {
   return (
     <div>

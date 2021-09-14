@@ -7,6 +7,22 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
+import {
+  bedlinen,
+  bath,
+  contractbedding,
+  bedscarf,
+  bedspread,
+  blankets,
+  coverlets,
+  duvets,
+  mattresspad,
+  mattressencasements,
+  pillows,
+  pillowcase,
+  saltlamp,
+} from "./components/productlsit";
+
 // icons
 import { IoLocationSharp } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
@@ -17,45 +33,21 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiPhone } from "react-icons/gi";
 
 // components
-// import { Carousel } from "./components/carousel";
 import { featurecategories } from "./components/productlsit";
-import { beddingproducts } from "./components/productlsit";
-// hotel components
-// import Bedlinen from "./components/hotel/bedlinen";
-// import Bedscarf from "./components/hotel/bedscarf";
-// import Bedspreads from "./components/hotel/bedspreads";
-// import Blankets from "./components/hotel/blankets";
-// import Contractbedding from "./components/hotel/contractbedding";
-// import Coverlets from "./components/hotel/coverlets";
-// import Duvets from "./components/hotel/duvets";
-// import Mattressencasements from "./components/hotel/mattressencasements";
-// import Mattresspad from "./components/hotel/mattresspad";
-// import Pillows from "./components/hotel/pillows";
-// import Pillowcase from "./components/hotel/pillowcase";
-// import Bath from "./components/hotel/bath";
-// import Productpage from "./components/productpage";
 
 // my styling
 import styled from "styled-components";
 import "./styles/main.scss";
 import "./styles/hotel.scss";
+import "./styles/restpage.scss";
 
 // SWIPER
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Lazy, Autoplay, Pagination, Navigation } from "swiper";
-// import "swiper/swiper.scss";
-// import "swiper/css";
-
 import "../node_modules/swiper/swiper.scss";
-
-// import "swiper/swiper-bundle.min.css";
-// import "swiper/swiper.min.css"
-
-import bedsheetset from "./assets/hotel/bedsheetset.jpg";
 
 SwiperCore.use([Lazy, Autoplay, Pagination, Navigation]);
 
@@ -302,7 +294,7 @@ function Home() {
         </div>
       </div>
       <div className="featurecatdiv">
-        <h2>FEATURE PRODUCTS</h2>
+        <h2>FEATURE CATEGORIES</h2>
         <div className="featurecatdivinner">
           {featurecategories.map((category, key) => {
             return (
@@ -380,13 +372,16 @@ function Hospitality() {
   return (
     <div className="hospitality">
       <div className="hospitalityinner">
-        <h2>hospitality</h2>
+        <h1>HOSPITALITY</h1>
         <div className="hotelcats">
           <ul>
             <li>
               <Link to="/hospitality/contractbedding">
                 <div>
-                  <img src={require("./assets/rice_flour/bag.jpg")} alt="bag" />
+                  <img
+                    src={require("./assets/categories/contractbedding.png")}
+                    alt="bedding"
+                  />
                   <h3>Contract Bedding</h3>
                 </div>
               </Link>
@@ -395,45 +390,125 @@ function Hospitality() {
               <Link to="/hospitality/bedlinen">
                 <div>
                   <img
-                    src={require("./assets/rice_flour/flour.jpg")}
-                    alt="bag"
+                    src={require("./assets/categories/bedlinen.png")}
+                    alt="bed linen"
                   />
                   <h3>Bed linen</h3>
                 </div>
               </Link>
             </li>
             <li>
-              <Link to="/hospitality/bedscarf">Bed Scarf</Link>
-            </li>
-            <li>
-              <Link to="/hospitality/bedspreads">bed spreads</Link>
-            </li>
-            <li>
-              <Link to="/hospitality/blankets">blankets</Link>
-            </li>
-
-            <li>
-              <Link to="/hospitality/coverlets">Coverlets</Link>
-            </li>
-            <li>
-              <Link to="/hospitality/duvets">Duvets</Link>
-            </li>
-            <li>
-              <Link to="/hospitality/mattresspad">Mattress Pads</Link>
-            </li>
-            <li>
-              <Link to="/hospitality/mattressencasements">
-                Mattress Encasements
+              <Link to="/hospitality/bedscarf">
+                <div>
+                  <img
+                    src={require("./assets/categories/bedscarf.png")}
+                    alt="bed scarf"
+                  />
+                  <h3>Bed Scarf</h3>
+                </div>
               </Link>
             </li>
             <li>
-              <Link to="/hospitality/pillows">Pillows</Link>
+              <Link to="/hospitality/bedspreads">
+                <div>
+                  <img
+                    src={require("./assets/categories/bedspread.png")}
+                    alt="cat"
+                  />
+                  <h3>bed spreads</h3>
+                </div>
+              </Link>
             </li>
             <li>
-              <Link to="/hospitality/pillowcase">Pillow Case</Link>
+              <Link to="/hospitality/blankets">
+                <div>
+                  <img
+                    src={require("./assets/categories/blankets.png")}
+                    alt="cat"
+                  />
+                  <h3>blankets</h3>
+                </div>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/hospitality/coverlets">
+                <div>
+                  <img
+                    src={require("./assets/categories/coverlets.png")}
+                    alt="cat"
+                  />
+                  <h3>Coverlets</h3>
+                </div>
+              </Link>
             </li>
             <li>
-              <Link to="/hospitality/bath">Hotel Bath</Link>
+              <Link to="/hospitality/duvets">
+                <div>
+                  <img
+                    src={require("./assets/categories/duvets.png")}
+                    alt="cat"
+                  />
+                  <h3>Duvets</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/mattresspad">
+                <div>
+                  <img
+                    src={require("./assets/categories/mattresspad.png")}
+                    alt="cat"
+                  />
+                  <h3>Mattress Pads</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/mattressencasements">
+                <div>
+                  <img
+                    src={require("./assets/categories/mattressencasement.png")}
+                    alt="cat"
+                  />
+                  <h3>Mattress Encasements</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/pillows">
+                <div>
+                  <img
+                    src={require("./assets/categories/pillows.png")}
+                    alt="cat"
+                  />
+                  <h3>Pillows</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/pillowcase">
+                {" "}
+                <div>
+                  <img
+                    src={require("./assets/categories/pillowcase.png")}
+                    alt="cat"
+                  />
+                  <h3>Pillow Case</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/bath">
+                {" "}
+                <div>
+                  <img
+                    src={require("./assets/categories/bath.png")}
+                    alt="cat"
+                  />
+                  <h3>Hotel Bath</h3>
+                </div>
+              </Link>
             </li>
           </ul>
         </div>
@@ -473,36 +548,131 @@ function Hospitality() {
 function Institution() {
   return <h2>Institution</h2>;
 }
+
 function Saltlamp() {
-  return <h2>Salt Lamp</h2>;
+  return (
+    <div className="subcatprodspage">
+      <h1>SALT LAMP PRODUCTS</h1>
+      <ul>
+        {saltlamp.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 function About() {
-  return <h2>About</h2>;
+  return (
+    <div className="aboutpage">
+      <div className="aboutpageinner">
+        <div className="imgdiv">
+          <h1>about zartaj</h1>
+        </div>
+        <div className="textdiv">
+          <h3>
+            Zartaj Traders Ltd. is one of the fastest growing Hospitality,
+            Lodging and Facilities distributors in UAE.
+          </h3>
+          <br />
+          <p>
+            To achieve that standing we have exceeded the expectations of our
+            clients in the hospitality industry through unparalleled trust,
+            commitment, and consistency. We subscribe to the old proverb,{" "}
+            <strong>“If a job is worth doing, it is worth doing well.”</strong>
+          </p>
+          <br />{" "}
+          <p>
+            Zartaj Traders offers an incomparable range of hundreds of products
+            for the Hospitality Industry, all segments. We outfit and supply
+            facilities that encompass the whole gamut from independent Bed and
+            Breakfast establishments, to 5 Star Hotels. We supply products to
+            Health Care Institutions, Long Term Care Homes, and Retirement and
+            Nursing Homes. We also cater to the needs of Government institutions
+            such as Correctional Institutes, and educational facilities,
+            Universities, Schools and Colleges, and also to many other markets
+            that utilize Hospitality and Health Care products. We pride
+            ourselves on being able to source, design and deliver the specific
+            needs of our clients. We stock products that include bed linen, bath
+            linen, table linen, window coverings, bath and room amenities,
+            housekeeping and cleaning supplies, room appliances and much more.
+            We work hard to ensure that we can offer our customers the best
+            prices, excellent quality, good service and on-time delivery. We
+            also serve properties, with their own private label products in
+            addition to our stocking product range. “If a job is worth doing, it
+            is worth doing well.”.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Contact() {
-  return <h2>Contact</h2>;
+  return (
+    <div className="contactpage">
+      <div className="contactpageinner">
+        <h1>Contact Us</h1>
+        <div className="contactinfo">
+          <div className="textdetail">
+            <h2>Zartaj General Trader LLC.</h2>
+            <div className="detail">
+              <address>
+                <IoLocationSharp />{" "}
+              </address>
+              <h4>Phone</h4>
+              <p>
+                <GiPhone /> +971-67445406{" "}
+              </p>
+              <p>
+                <GiPhone /> +971-501240541{" "}
+              </p>
+
+              <h4>Email</h4>
+              <p>
+                <IoMdMail />
+                <a href="mailto:info@zartajtrading.com">
+                  info@zartajtrading.com
+                </a>{" "}
+              </p>
+              <p>
+                <IoMdMail />
+                <a href="mailto:mubashar@zartajtrading.com">
+                  mubashar@zartajtrading.com
+                </a>{" "}
+              </p>
+            </div>
+          </div>
+          <div className="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38986.52227682363!2d55.425979788162174!3d25.390042716998536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5834f9723a75%3A0x82583122a8f6bf94!2sSheikh%20Khalifa%20Bin%20Zayed%20St%20-%20Ajman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1631601391713!5m2!1sen!2sus"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <h1></h1>
+    </div>
+  );
 }
 
 ///////////////////////////////////////////
 ////// hotel components products list /////
 ///////////////////////////////////////////
-
-import {
-  bedlinen,
-  bath,
-  contractbedding,
-  bedscarf,
-  bedspread,
-  blankets,
-  coverlets,
-  duvets,
-  mattresspad,
-  mattressencasements,
-  pillows,
-  pillowcase,
-} from "./components/productlsit";
 
 const Contractbedding = () => {
   return (

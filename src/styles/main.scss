@@ -145,12 +145,12 @@ nav {
 
 .navtogglebtn {
   position: fixed;
-  top: 1rem;
+  top: 3rem;
   right: 1.5rem;
 
   padding: 6px;
 
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(235, 235, 235);
 
   z-index: 100000;
 
@@ -339,7 +339,7 @@ main {
     width: 180px;
     height: auto;
     text-align: center;
-    background-color: #eee;
+    background-color: #f2f2f2;
     margin: 1rem;
     img {
       width: 180px;
@@ -347,6 +347,7 @@ main {
     }
     h4 {
       margin: 10px 0;
+      font-size: 1.2rem;
     }
   }
 }
@@ -424,7 +425,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 426px) {
   .tareef .tareefinner .imgdiv {
     width: 80px !important;
     height: 60px !important;
@@ -450,11 +451,9 @@ main {
     .cat {
       width: 90%;
       height: auto;
-      text-align: center;
-      background-color: #eee;
       margin: 1rem;
       img {
-        width: 80%;
+        width: 100%;
         height: 250px;
       }
       h4 {

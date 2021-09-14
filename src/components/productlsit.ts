@@ -1,83 +1,3 @@
-export const beddingproducts = [
-  {
-    title: "pillow",
-    category: "pillow",
-    desc: "description daadadassdsd",
-    measurement: "",
-    imgurl: "./assets/hotel/pillow.jpg",
-  },
-  {
-    title: "blanket",
-    category: "blanket",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/.jpg",
-  },
-  {
-    title: "pool towel",
-    category: "bath",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/towels.jpg",
-  },
-  {
-    title: "bed sheet",
-    category: "coverlets",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/bedspread.jpg",
-  },
-  {
-    title: "Duvet Cover",
-    category: "duvets",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/duvets.jpg",
-  },
-  {
-    title: "Hand Towel",
-    category: "bath",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/handtowel.jpg",
-  },
-  {
-    title: "Duvet",
-    category: "duvets",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/duvets.jpg",
-  },
-  {
-    title: "Pillow Cover",
-    category: "pillow case",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/pillowcase.jpg",
-  },
-  {
-    title: "blanket",
-    category: "blankets",
-    desc: "description",
-    measurement: "",
-    imgurl: "./assets/hotel/blanket.jpg",
-  },
-];
-
-const mainhotelcat = [
-  "Bedspreads",
-  "Blankets",
-  "Contract Bedding",
-  "Coverlets",
-  "Duvets",
-  "Hotel Bed Linen",
-  "Hotel Bed Scarf",
-  "Hotel Mattress Pads",
-  "Hotel Pillows",
-  "mattress Encasements",
-  "Pillow Case",
-];
-
 export const featurecategories = [
   {
     cat: "Contract Bedding",
@@ -122,102 +42,28 @@ export const featurecategories = [
   },
 ];
 
-export const bedding = [
+////////////////////////////////////////////
+//////////////   SALT LAMP    //////////////
+////////////////////////////////////////////
+
+export const saltlamp = [
   {
-    catid: "bedlinen",
-    title: "Pillow",
-    category: "pillow",
-    desc: "white color pillow for bedroom",
+    prodid: 2101,
+    catid: "saltlamp",
+    title: "Super Himalayan Salt Lamp",
+    category: "Salt Lamp",
+    desc: "The beautiful glow from our Rock Salt Lamps will bring a tranquil ambiance to your office, living room and bed room.",
     measurement: "",
-    imgurl: "assets/hotel/pillow.jpg",
+    imgurl: "./assets/saltlamp/saltlamp.jpg",
   },
   {
-    catid: "bedlinen",
-    title: "Pillow Case",
-    category: "pillow case",
-    desc: "pillow case for pillow",
+    prodid: 2102,
+    catid: "saltlamp",
+    title: "Bowl Shape Himalayan Salt Lamp ",
+    category: "Pillow Case",
+    desc: "Himalayan rock salt lamp in bowl shape with salt crystals for super nice ambiance at your home or office.",
     measurement: "",
-    imgurl: "assets/hotel/pillowcase.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Silk Pillow Case",
-    category: "pillow case",
-    desc: "white silk pillow case for pillow",
-    measurement: "",
-    imgurl: "assets/hotel/pillowcase2.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Bath Curtains",
-    category: "bath",
-    desc: "curtains for bath",
-    measurement: "",
-    imgurl: "assets/hotel/bathcurtains.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "White Bath Curtians",
-    category: "bath",
-    desc: "Curtains for bathroom white color",
-    measurement: "",
-    imgurl: "assets/hotel/bathroomcurtains.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Bath Towel",
-    category: "bath",
-    desc: "towel for bathroom use",
-    measurement: "",
-    imgurl: "assets/hotel/bathtowel.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "White Bath Towel",
-    category: "bath",
-    desc: "towel for bathroom use",
-    measurement: "",
-    imgurl: "assets/hotel/bathtowel2.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Bed Base",
-    category: "furniture",
-    desc: "wooden base for bed",
-    measurement: "",
-    imgurl: "assets/hotel/bedbase.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Colored Bed Scarf",
-    category: "bed scarf",
-    desc: "colored scarf for bed",
-    measurement: "",
-    imgurl: "assets/hotel/bedscarves.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "Bed Scarf",
-    category: "bed scarf",
-    desc: "scarf for bed",
-    measurement: "",
-    imgurl: "assets/hotel/bedscarves2.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "White Bed Sheet Set",
-    category: "Bed Linen",
-    desc: "white color sheet set for bed",
-    measurement: "",
-    imgurl: "assets/hotel/flatwhitebedsheet.jpg",
-  },
-  {
-    catid: "bedlinen",
-    title: "White Bed Sheet Set",
-    category: "Bed Linen",
-    desc: "white color sheet set for bed",
-    measurement: "",
-    imgurl: "assets/hotel/bedScarves2.jpg",
+    imgurl: "./assets/saltlamp/saltlamp3.jpg",
   },
 ];
 
@@ -954,5 +800,25 @@ export const allproducts = [
     desc: "Mat for indoor use",
     measurement: "",
     imgurl: "./assets/hotelprods/mat2.jpg",
+  },
+
+  /////////// salt lamp /////////////////
+  {
+    prodid: 2101,
+    catid: "saltlamp",
+    title: "Super Himalayan Salt Lamp",
+    category: "Salt Lamp",
+    desc: "The beautiful glow from our Rock Salt Lamps will bring a tranquil ambiance to your office, living room and bed room.",
+    measurement: "",
+    imgurl: "./assets/saltlamp/saltlamp.jpg",
+  },
+  {
+    prodid: 2102,
+    catid: "saltlamp",
+    title: "Himalayan Salt Lamp in Bowl Shape",
+    category: "Pillow Case",
+    desc: "Himalayan rock salt lamp in bowl shape with salt crystals for super nice ambiance at your home or office.",
+    measurement: "",
+    imgurl: "./assets/saltlamp/saltlamp3.jpg",
   },
 ];
