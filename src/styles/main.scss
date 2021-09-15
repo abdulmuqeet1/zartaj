@@ -484,14 +484,14 @@ main {
 footer {
   width: 100vw;
   height: auto;
+  background-color: $primary-color;
   @include placecenter;
 
   .footercontent {
     width: 100%;
     max-width: $max-default-width;
-    min-height: 12rem;
-    height: auto;
+
     padding: 1rem;
-    background-color: $primary-color;
+    color: #fff;
   }
 }

@@ -149,6 +149,84 @@
   }
 }
 
+.activesuccessmsg {
+  width: 250px;
+  height: 40px;
+  background-color: #b9f8b9;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
+  font-size: 1rem;
+  P {
+    margin-left: 10px;
+  }
+  transition: all 400ms ease-in-out;
+}
+.successmsg {
+  width: 250px;
+  height: 40px;
+  background-color: #b9f8b9;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  position: fixed;
+  right: -100%;
+  bottom: 2rem;
+  font-size: 1rem;
+  P {
+    margin-left: 10px;
+  }
+  transition: all 400ms ease-in-out;
+}
+.activeerrormsg {
+  width: 250px;
+  height: 40px;
+  background-color: #ffc5c5;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
+  font-size: 1rem;
+  P {
+    margin-left: 10px;
+  }
+  transition: all 400ms ease-in-out;
+}
+
+.errormsg {
+  width: 250px;
+  height: 40px;
+  background-color: #ffc5c5;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  position: fixed;
+  right: -100%;
+  bottom: 2rem;
+  font-size: 1rem;
+  P {
+    margin-left: 10px;
+  }
+  transition: all 400ms ease-in-out;
+}
+
 @media only screen and (max-width: 480px) {
   .contactpageinner .contactinfo .map iframe {
     width: 380px;

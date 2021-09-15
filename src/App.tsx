@@ -7,6 +7,8 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
+import emailjs from "emailjs-com";
+
 import {
   bedlinen,
   bath,
@@ -20,8 +22,13 @@ import {
   mattressencasements,
   pillows,
   pillowcase,
+  curtains,
+  drapes,
   saltlamp,
 } from "./components/productlsit";
+
+import { allproducts } from "./components/productlsit";
+import { useParams } from "react-router-dom";
 
 // icons
 import { IoLocationSharp } from "react-icons/io5";
@@ -33,6 +40,8 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
+import { TiTick } from "react-icons/ti";
+
 import { GiHamburgerMenu, GiPhone } from "react-icons/gi";
 
 // components
@@ -214,6 +223,12 @@ export const App = () => {
             <Route exact path="/hospitality/pillows">
               <Pillows />
             </Route>
+            <Route exact path="/hospitality/curtains">
+              <Curtains />
+            </Route>
+            <Route exact path="/hospitality/drapes">
+              <Drapes />
+            </Route>
             <Route exact path="/hospitality/pillowcase">
               <Pillowcase />
             </Route>
@@ -231,7 +246,31 @@ export const App = () => {
       </Router>
       <footer>
         <div className="footercontent">
-          <h2>Footer</h2>
+          <div className="zartajintro">
+            <h2>Zartaj Traders LLC.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              repellat reiciendis culpa laboriosam, unde temporibus.
+            </p>
+          </div>
+          <div className="quicklinks">
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>
+              <a href="#">
+                <AiFillFacebook />
+              </a>
+              <a href="#">
+                <AiOutlineInstagram />
+              </a>
+              <a href="#">
+                <AiOutlineTwitter />
+              </a>
+            </li>
+          </div>
         </div>
       </footer>
     </div>
@@ -454,6 +493,17 @@ function Hospitality() {
               </Link>
             </li>
             <li>
+              <Link to="/hospitality/drapes">
+                <div>
+                  <img
+                    src={require("./assets/categories/drapes.png")}
+                    alt="cat"
+                  />
+                  <h3>Drapes</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
               <Link to="/hospitality/mattresspad">
                 <div>
                   <img
@@ -472,6 +522,17 @@ function Hospitality() {
                     alt="cat"
                   />
                   <h3>Mattress Encasements</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospitality/curtains">
+                <div>
+                  <img
+                    src={require("./assets/categories/drapes.png")}
+                    alt="cat"
+                  />
+                  <h3>Curtains</h3>
                 </div>
               </Link>
             </li>
@@ -623,6 +684,36 @@ function About() {
 }
 
 function Contact() {
+  const [mailsuccess, setMailsuccess] = useState(false);
+  const [mailfail, setMailfail] = useState(false);
+
+  const sendmail = (e: any) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_2kq1lvm",
+        "template_7q9oitu",
+        e.target,
+        "user_FHbcqX6JOmsI9MAZPLWvs"
+      )
+      .then(
+        () => {
+          setMailsuccess(true);
+          removemsg();
+          console.log("asdassdd");
+        },
+        () => {
+          setMailfail(true);
+          removemsg();
+        }
+      );
+  };
+  const removemsg = () => {
+    setTimeout(function () {
+      setMailsuccess(false);
+      setMailfail(false);
+    }, 3000);
+  };
   return (
     <div className="contactpage">
       <div className="contactpageinner">
@@ -667,7 +758,7 @@ function Contact() {
         </div>
         <div className="contactform">
           <h2>Form</h2>
-          <form action="">
+          <form action="" onSubmit={sendmail}>
             <input type="text" name="name" placeholder="Full Name" id="name" />
             <input type="text" name="phone" placeholder="Phone" id="phone" />
             <br />
@@ -675,11 +766,18 @@ function Contact() {
             <br />
             <textarea name="message" placeholder="Message" id="message" />
             <br />
-            <input type="submit" id="submitbtn" />
+            <input type="submit" id="submitbtn" value="SEND" />
           </form>
         </div>
       </div>
-      <h1></h1>
+      <div className={mailsuccess ? "activesuccessmsg" : "successmsg"}>
+        <TiTick />
+        <p>Mail send successfully</p>
+      </div>
+      <div className={mailfail ? "activeerrormsg" : "errormsg"}>
+        <ImCross />
+        <p>Error sending mail </p>
+      </div>
     </div>
   );
 }
@@ -976,6 +1074,58 @@ const Pillowcase = () => {
     </div>
   );
 };
+const Curtains = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {curtains.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+const Drapes = () => {
+  return (
+    <div className="subcatprodspage">
+      <h1>Bed Linen Products</h1>
+      <ul>
+        {drapes.map((prod, key) => {
+          return (
+            <li key={key} className="indieprodcard">
+              <Link to={`/hospitality/${prod.catid}/${prod.prodid}`}>
+                <div>
+                  <img src={require(`${prod.imgurl}`)} alt="bedsheet" />
+                  <div className="details">
+                    <p>{prod.category}</p>
+                    <h4>{prod.title}</h4>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
 const Bath = () => {
   return (
@@ -1006,9 +1156,6 @@ const Bath = () => {
 
 ////  ALL PAGE COMPOENTS /////
 
-import { allproducts } from "./components/productlsit";
-import { useParams } from "react-router-dom";
-
 const Productpage = () => {
   let { catid, prodid }: any = useParams();
   const product = allproducts.find((product) => product.prodid == prodid);
@@ -1033,5 +1180,3 @@ const Productpage = () => {
     </div>
   );
 };
-
-export default Productpage;
