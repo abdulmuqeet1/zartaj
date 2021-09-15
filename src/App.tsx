@@ -305,6 +305,14 @@ export const App = () => {
           </div>
         </div>
       </footer>
+      <div className="bottombar">
+        <div className="bottombarinner">
+          <p>© 2021 Zartaj Traders Ltd. All rights Reserved.</p>
+          <p className="credits">
+            design and developed by <span>Avicta</span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

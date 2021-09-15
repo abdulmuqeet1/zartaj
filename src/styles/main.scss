@@ -443,6 +443,10 @@ main {
   footer .footermap {
     display: none;
   }
+
+  .credits {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 426px) {
@@ -511,6 +515,7 @@ main {
 footer {
   width: 100vw;
   height: auto;
+  margin-top: 1rem;
   background-color: rgb(22, 22, 22);
   @include placecenter;
 
@@ -520,7 +525,7 @@ footer {
     @include placecenter(center, space-between);
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 2rem 1rem;
     margin: 1rem 0;
     color: #fff;
 
@@ -547,6 +552,25 @@ footer {
           color: #fff;
         }
       }
+    }
+  }
+}
+
+.bottombar {
+  width: 100vw;
+  @include placecenter;
+
+  .bottombarinner {
+    width: 100%;
+    max-width: $max-default-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+
+    .credits span {
+      color: tomato;
     }
   }
 }
