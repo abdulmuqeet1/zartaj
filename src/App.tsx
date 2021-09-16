@@ -41,6 +41,7 @@ import {
 } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { TiTick } from "react-icons/ti";
+import { MdPhonelinkRing } from "react-icons/md";
 
 import { GiHamburgerMenu, GiPhone } from "react-icons/gi";
 
@@ -82,15 +83,19 @@ export const App = () => {
           <div className="contactdetail">
             <p>
               <AiFillPhone />
-              0900-78601
+              +971-501240541
             </p>
             <p>
-              <IoMdMail /> <a href="mailto:xyz@gmail.com">xyz@gmail.com</a>
+              <IoMdMail />{" "}
+              <a href="mailto:info@zartajtrading.com">info@zartajtrading.com</a>
             </p>
           </div>
           <div className="sociallinks">
             <li>
-              <a href="#">
+              <a
+                href="https://www.facebook.com/Zartaj-General-Traders-LLC-UAE-107738754928088"
+                target="_blank"
+              >
                 <AiFillFacebook />
               </a>
             </li>
@@ -111,8 +116,9 @@ export const App = () => {
         <header>
           <nav>
             <div className="logo">
-              <h4>LOGO</h4>
-              {/* <img src={require("./assets/googlelogo.png")} alt="logo" /> */}
+              <a href="/">
+                <img src={require("./assets/logo.png")} alt="logo" />
+              </a>
             </div>
             <div className="navlinks">
               <ul>
@@ -122,9 +128,9 @@ export const App = () => {
                 <li>
                   <Link to="/hospitality">HOSPITALITY</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/institution">INSTITUTION</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/saltlamp">SALT LAMP</Link>
                 </li>
@@ -156,10 +162,10 @@ export const App = () => {
                 <Link to="/hospitality">
                   <li>HOSPITALITY</li>
                 </Link>
-
+                {/* 
                 <Link to="/institution">
                   <li>INSTITUTION</li>
-                </Link>
+                </Link> */}
 
                 <Link to="/saltlamp">
                   <li>SALT LAMP</li>
@@ -181,9 +187,9 @@ export const App = () => {
             <Route exact path="/hospitality">
               <Hospitality />
             </Route>
-            <Route exact path="/institution">
+            {/* <Route exact path="/institution">
               <Institution />
-            </Route>
+            </Route> */}
             <Route path="/saltlamp">
               <Saltlamp />
             </Route>
@@ -247,20 +253,40 @@ export const App = () => {
       <footer>
         <div className="footercontent">
           <div className="zartajintro">
-            <h2>Zartaj Traders LLC.</h2>
+            <img src={require("./assets/logo.png")} alt="logo" />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              repellat reiciendis culpa laboriosam, unde temporibus.
+              Zartaj Traders LLC. offers an incomparable range of hundreds of
+              products for the Hospitality Industry, all segments.
             </p>
           </div>
           <div className="quicklinks">
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
             <li>
-              <a href="#">
+              <IoLocationSharp />
+              <address>
+                Grand Mall, Shaikh Khalifa Street, POBOX 45340, Ajman, UAE
+              </address>
+            </li>
+            <li>
+              <AiFillPhone />
+              <p>+971-67445406</p>
+            </li>
+            <li>
+              <MdPhonelinkRing />
+              <p>+971-501240541</p>
+            </li>
+            <li>
+              <IoMdMail />
+              <p>info@zartajtrading.com</p>
+            </li>
+            <li>
+              <IoMdMail />
+              <p>mubashar@zartajtrading.com</p>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/Zartaj-General-Traders-LLC-UAE-107738754928088"
+                target="_blank"
+              >
                 <AiFillFacebook />
               </a>
               <a href="#">
@@ -271,8 +297,22 @@ export const App = () => {
               </a>
             </li>
           </div>
+          <div className="footermap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38986.52227682363!2d55.425979788162174!3d25.390042716998536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5834f9723a75%3A0x82583122a8f6bf94!2sSheikh%20Khalifa%20Bin%20Zayed%20St%20-%20Ajman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1631601391713!5m2!1sen!2sus"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </footer>
+      <div className="bottombar">
+        <div className="bottombarinner">
+          <p>© 2021 Zartaj Traders Ltd. All rights Reserved.</p>
+          <p className="credits">
+            design and developed by <span>Avicta</span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -294,7 +334,6 @@ function Home() {
           navigation={true}
           controller={{ inverse: false }}
           pagination={{ clickable: true, type: "bullets" }}
-          onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
             <img src={require("./assets/slider/slider1.jpg")} alt="slider" />
@@ -310,9 +349,6 @@ function Home() {
           </SwiperSlide>
           <SwiperSlide>
             <img src={require("./assets/slider/slider5.jpg")} alt="slider" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={require("./assets/slider/slider6.jpg")} alt="slider" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -353,11 +389,20 @@ function Home() {
         <div className="text">
           <h2>Welcome to Zartaj Traders</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            quam fugit accusamus sed dicta. Voluptatum tempore, soluta
-            laboriosam officia corporis unde voluptatem. Itaque nesciunt, sint
-            eligendi consectetur, tempore sed sit laboriosam eos deserunt, neque
-            architecto consequuntur magni expedita hic adipisci?
+            To achieve that standing we have exceeded the expectations of our
+            clients in the hospitality industry through unparalleled trust,
+            commitment, and consistency. We subscribe to the old proverb,{" "}
+            <strong>“If a job is worth doing, it is worth doing well.”</strong>{" "}
+            <br />
+            Zartaj Traders offers an incomparable range of hundreds of products
+            for the Hospitality Industry, all segments. We outfit and supply
+            facilities that encompass the whole gamut from independent Bed and
+            Breakfast establishments, to 5 Star Hotels. We supply products to
+            Health Care Institutions, Long Term Care Homes, and Retirement and
+            Nursing Homes. We also cater to the needs of Government institutions
+            such as Correctional Institutes, and educational facilities,
+            Universities, Schools and Colleges, and also to many other markets
+            that utilize Hospitality and Health Care products.
           </p>
         </div>
       </div>

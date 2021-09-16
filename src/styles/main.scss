@@ -113,6 +113,15 @@ nav {
   padding: 0 1rem;
 }
 
+.logo {
+  width: 150px;
+  height: 50px;
+  img {
+    width: 150px;
+    height: 50px;
+  }
+}
+
 .navlinks ul {
   display: flex;
   align-items: center;
@@ -277,12 +286,12 @@ main {
 
 .carousel {
   width: 100vw;
-  height: 65vh;
+  height: 75vh;
   background-color: rgba(0, 0, 0, 0.253);
   z-index: 100;
   img {
     width: 100vw;
-    height: 65vh;
+    height: 75vh;
   }
 }
 
@@ -405,6 +414,13 @@ main {
 }
 
 @media only screen and (max-width: 900px) {
+  .carousel {
+    height: 60vh;
+    img {
+      height: 60vh;
+    }
+  }
+
   .tareef .tareefinner .imgdiv {
     width: 120px;
     height: 100px;
@@ -423,9 +439,24 @@ main {
       justify-content: center;
     }
   }
+
+  footer .footermap {
+    display: none;
+  }
+
+  .credits {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 426px) {
+  .carousel {
+    height: 50vh;
+    img {
+      height: 50vh;
+    }
+  }
+
   .tareef .tareefinner .imgdiv {
     width: 80px !important;
     height: 60px !important;
@@ -484,14 +515,68 @@ main {
 footer {
   width: 100vw;
   height: auto;
-  background-color: $primary-color;
+  margin-top: 1rem;
+  background-color: rgb(22, 22, 22);
   @include placecenter;
 
   .footercontent {
     width: 100%;
     max-width: $max-default-width;
-
-    padding: 1rem;
+    @include placecenter(center, space-between);
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    margin: 1rem 0;
     color: #fff;
+
+    .zartajintro {
+      width: 300px;
+      margin: 1rem 0;
+      img {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    .quicklinks {
+      li {
+        @include placecenter(center, flex-start);
+        flex-direction: row;
+        margin: 10px;
+        address,
+        p {
+          margin-left: 5px;
+        }
+        a {
+          margin-right: 8px;
+          font-size: 1.5rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.bottombar {
+  width: 100vw;
+  @include placecenter;
+
+  .bottombarinner {
+    width: 100%;
+    max-width: $max-default-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+
+    .credits span {
+      color: tomato;
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  footer .footermap {
+    display: none;
   }
 }
