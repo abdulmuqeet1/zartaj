@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Link,
+  HashRouter,
   useRouteMatch,
 } from "react-router-dom";
 
@@ -112,7 +113,7 @@ export const App = () => {
           </div>
         </div>
       </div>
-      <Router>
+      <HashRouter>
         <header>
           <nav>
             <div className="logo">
@@ -249,7 +250,7 @@ export const App = () => {
             </Route>
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
       <footer>
         <div className="footercontent">
           <div className="zartajintro">
